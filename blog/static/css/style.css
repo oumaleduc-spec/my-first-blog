@@ -458,7 +458,61 @@ footer {
   }
 }
 @media (max-width: 768px) {
+
   body {
-    background: blue !important;
+    overflow-x: hidden !important;
+  }
+
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 20px 14px !important;
+  }
+
+  .grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    gap: 20px !important;
+  }
+
+  .card {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero {
+    padding: 50px 16px !important;
+    text-align: center !important;
+  }
+
+  .hero h1 {
+    font-size: 2rem !important;
+    line-height: 1.1 !important;
+    word-break: break-word !important;
+  }
+
+  .hero p {
+    font-size: 1rem !important;
+  }
+
+  .navbar {
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 15px !important;
+  }
+
+  .nav-links {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  .nav-links a {
+    margin: 0 !important;
+    font-size: 0.9rem !important;
   }
 }

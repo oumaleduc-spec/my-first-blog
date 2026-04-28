@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>InsultHub</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<script>
+  function acceptAge() {
+    document.getElementById("age-popup").style.display = "none";
+  }
+
+  function denyAge() {
+    window.location.href = "https://www.google.com";
+  }
+</script>
+
+<body>
+
+    <!-- 🔞 BANNER -->
+    <div class="adult-banner">
+        🔞 ADULT CONTENT — LANGUAGE COLLECTION
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+<a href="{% url 'home' %}" class="logo">INSULT<span>HUB</span></a>
+
+        <div class="nav-links">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'languages' %}">Languages</a>
+            <a href="{% url 'top' %}">Top Insults</a>
+        </div>
+    </nav>
+
+    <!-- 🔥 CONTENU VARIABLE -->
+    {% block content %}
+    {% endblock %}
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 InsultHub — Pick a language and start exploring
+    </footer>
+
+</body>
+
+<div id="age-popup" class="age-popup">
+  <div class="age-box">
+    <h2>🔞 Adults Only</h2>
+    <p>This website contains strong language.<br>Are you 18 or older?</p>
+    
+    <div class="age-buttons">
+      <button onclick="acceptAge()">Yes, I am 18+</button>
+      <button onclick="denyAge()">No</button>
+    </div>
+  </div>
+</div>
+
+</html>

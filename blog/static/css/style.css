@@ -362,6 +362,7 @@ footer {
   background: red;
   color: white;
 }
+
 /* =========================
    RESPONSIVE — MOBILE
 ========================= */
@@ -454,5 +455,10 @@ footer {
 
   .card {
     border-radius: 16px;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    background: blue !important;
   }
 }

@@ -516,3 +516,51 @@ footer {
     font-size: 0.9rem !important;
   }
 }
+.contact-form {
+  max-width: 500px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-form label {
+  color: #ffcc00;
+  font-weight: bold;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #000;
+  color: white;
+}
+
+.contact-form button {
+  background: #ffcc00;
+  color: black;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #ff0000;
+  color: white;
+}
+
+#contact,
+#imprint {
+  margin-bottom: 35px;
+}
+
+#contact h2,
+#imprint h2 {
+  color: #ffcc00;
+  margin-bottom: 15px;
+}

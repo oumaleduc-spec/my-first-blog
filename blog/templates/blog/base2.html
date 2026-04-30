@@ -22,11 +22,6 @@
 
 <body>
 
-    <!-- 🔞 BANNER -->
-    <div class="adult-banner">
-        🔞 ADULT CONTENT — LANGUAGE COLLECTION
-    </div>
-
     <!-- NAVBAR -->
     <header>
   <div class="adult-banner">
@@ -53,24 +48,33 @@
     {% endblock %}
 
     <!-- FOOTER -->
-<footer>
-  <section id="contact">
+<footer class="site-footer">
+  <section id="contact" class="footer-section">
     <h2>Contact</h2>
+
     <form class="contact-form">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+      </div>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
 
       <button type="submit">Send message</button>
     </form>
   </section>
 
-  <section id="imprint">
+  <section id="imprint" class="footer-section imprint-box">
     <h2>Imprint</h2>
     <p>
       InsultHub was created as a student graduation project.<br>
@@ -80,7 +84,7 @@
     </p>
   </section>
 
-  <p>© 2026 InsultHub — Pick a language and start exploring</p>
+  <p class="copyright">© 2026 InsultHub — Pick a language and start exploring</p>
 </footer>
 
 </body>

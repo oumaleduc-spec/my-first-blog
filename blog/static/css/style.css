@@ -669,3 +669,45 @@ footer {
     padding: 40px 16px 25px;
   }
 }
+
+.floating-image {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  z-index: 998;
+  text-align: center;
+}
+
+.floating-image img {
+  width: 180px;
+  border-radius: 14px;
+  border: 2px solid #ffcc00;
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.3);
+  transition: 0.3s;
+}
+
+.floating-image img:hover {
+  transform: scale(1.05);
+}
+
+.image-source {
+  margin-top: 6px;
+  font-size: 0.7rem;
+  color: #777;
+  max-width: 180px;
+}
+
+@media (max-width: 768px) {
+  .floating-image {
+    bottom: 15px;
+    left: 15px;
+  }
+
+  .floating-image img {
+    width: 120px;
+  }
+
+  .image-source {
+    display: none;
+  }
+}

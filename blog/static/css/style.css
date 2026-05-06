@@ -766,3 +766,12 @@ footer {
   background: red;
   color: white;
 }
+#form-success {
+  display: none;
+}
+.form-success {
+  color: #ffcc00;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}

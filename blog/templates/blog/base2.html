@@ -25,6 +25,25 @@
   ↑
 </button>
 
+<script>
+  function showMessage(event) {
+    event.preventDefault();
+
+    const form = event.target;
+
+    form.innerHTML = `
+      <div class="success-message">
+        <h3>✅ Sent!</h3>
+        <p>Want to write again?</p>
+
+        <button type="button" onclick="location.reload()">
+          Write again
+        </button>
+      </div>
+    `;
+  }
+</script>
+
 <body>
 
     <!-- NAVBAR -->
@@ -57,7 +76,7 @@
   <section id="contact" class="footer-section">
     <h2>Contact</h2>
 
-    <form class="contact-form">
+   <form class="contact-form" onsubmit="showMessage(event)"></form>
       <div class="form-row">
         <div class="form-group">
           <label for="name">Name</label>

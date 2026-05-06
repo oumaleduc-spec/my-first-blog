@@ -12,7 +12,16 @@
 </head>
 
 <script>
+  window.onload = function () {
+    if (!sessionStorage.getItem("adultConfirmed")) {
+      document.getElementById("age-popup").style.display = "flex";
+    } else {
+      document.getElementById("age-popup").style.display = "none";
+    }
+  };
+
   function acceptAge() {
+    sessionStorage.setItem("adultConfirmed", "true");
     document.getElementById("age-popup").style.display = "none";
   }
 

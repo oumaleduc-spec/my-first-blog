@@ -21,6 +21,10 @@
   }
 </script>
 
+<button onclick="scrollToTop()" id="topBtn" aria-label="Go to top">
+  ↑
+</button>
+
 <body>
 
     <!-- NAVBAR -->
@@ -101,5 +105,27 @@
     </div>
   </div>
 </div>
+
+<script>
+  window.onscroll = function () {
+    const topBtn = document.getElementById("topBtn");
+
+    if (
+      document.body.scrollTop > 200 ||
+      document.documentElement.scrollTop > 200
+    ) {
+      topBtn.style.display = "flex";
+    } else {
+      topBtn.style.display = "none";
+    }
+  };
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+</script>
 
 </html>

@@ -681,7 +681,6 @@ footer {
 .floating-image img {
   width: 95px;
   border-radius: 12px;
-  border: 2px solid #ffcc00;
   box-shadow: 0 0 15px rgba(255, 204, 0, 0.25);
 }
 

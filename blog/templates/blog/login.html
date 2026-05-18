@@ -1,0 +1,35 @@
+{% extends 'blog/base2.html' %}
+
+{% block content %}
+
+<section class="post-form-page">
+  <div class="post-form-card">
+    <span class="posts-tag">MEMBER ACCESS</span>
+
+    <h1>Login</h1>
+
+    <p class="form-intro">
+      Log in to like, comment and publish community posts.
+    </p>
+
+    <form method="POST" class="styled-form">
+      {% csrf_token %}
+
+      <div class="form-field">
+        <label for="id_username">Username</label>
+        {{ form.username }}
+      </div>
+
+      <div class="form-field">
+        <label for="id_password">Password</label>
+        {{ form.password }}
+      </div>
+
+      <button type="submit" class="main-btn">
+        Login
+      </button>
+    </form>
+  </div>
+</section>
+
+{% endblock %}

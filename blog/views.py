@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Post, Like
 from .forms import PostForm, CommentForm
+from django.contrib.auth.decorators import login_required
 
 
 def home(request):
@@ -51,6 +52,7 @@ def post_detail(request, pk):
     })
 
 
+    @login_required
 def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
@@ -66,6 +68,7 @@ def post_new(request):
     return render(request, 'blog/post_edit.html', {'form': form})
 
 
+@login_required
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
 
@@ -82,6 +85,7 @@ def post_edit(request, pk):
 
     return render(request, 'blog/post_edit.html', {'form': form})
 
+@login_required
 def like_post(request, pk):
     post = get_object_or_404(Post, pk=pk)
 

@@ -1228,3 +1228,12 @@ footer {
   color: #777;
   font-size: 0.9rem;
 }
+
+.post-title-link {
+  color: white;
+  text-decoration: none;
+}
+
+.post-title-link:hover {
+  color: #ffcc00;
+}

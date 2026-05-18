@@ -8,11 +8,13 @@
 
     <h1>Login</h1>
 
-    <p class="form-intro">
-      Log in to like, comment and publish community posts.
-    </p>
+    {% if form.errors %}
+      <p style="color:red; font-weight:bold;">
+        Wrong username or password.
+      </p>
+    {% endif %}
 
-    <form method="POST" class="styled-form">
+    <form method="POST" action="{% url 'login' %}" class="styled-form">
       {% csrf_token %}
 
       <div class="form-field">
@@ -25,9 +27,7 @@
         {{ form.password }}
       </div>
 
-      <button type="submit" class="main-btn">
-        Login
-      </button>
+      <button type="submit" class="main-btn">Login</button>
     </form>
   </div>
 </section>

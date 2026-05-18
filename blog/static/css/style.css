@@ -1237,3 +1237,24 @@ footer {
 .post-title-link:hover {
   color: #ffcc00;
 }
+
+.floating-image {
+  position: fixed;
+  bottom: 20px;
+  left: 8px;
+  z-index: 998;
+  text-align: center;
+}
+
+.floating-image img {
+  width: 95px;
+  height: auto;
+  border-radius: 12px;
+}
+
+.image-source {
+  font-size: 0.6rem;
+  color: #444;
+  opacity: 0.5;
+  margin-top: 4px;
+}

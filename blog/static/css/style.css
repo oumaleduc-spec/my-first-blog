@@ -1158,11 +1158,24 @@ footer {
 }
 
 .stat-pill {
-  padding: 8px 14px;
+  min-width: 54px;
+  height: 38px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  padding: 0 14px;
+
   border-radius: 999px;
   background: #1d1d1d;
+
   color: #ffcc00;
   font-weight: 800;
+  font-size: 0.95rem;
+
+  line-height: 1;
 }
 
 .styled-form {

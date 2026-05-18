@@ -508,7 +508,7 @@ footer {
     display: flex !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
-    gap: 10px !important;
+    gap: 30px !important;
   }
 
   .nav-links a {
@@ -1265,18 +1265,22 @@ footer {
 }
 
 .logout-form {
-  display: inline;
+  margin-left: auto;
 }
 
+.nav-login,
 .nav-logout {
   background: none;
   border: none;
   color: #aaa;
-  font-weight: bold;
-  cursor: pointer;
+  font-weight: 700;
   font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.2s ease;
 }
 
+.nav-login:hover,
 .nav-logout:hover {
   color: #ffcc00;
 }

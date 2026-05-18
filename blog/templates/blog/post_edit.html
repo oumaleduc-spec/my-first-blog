@@ -1,9 +1,41 @@
-{% extends 'blog/base.html' %}
+{% extends 'blog/base2.html' %}
+{% load static %}
 
 {% block content %}
-    <h2>New post</h2>
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-secondary">Save</button>
+
+<section class="post-form-page">
+
+  <div class="post-form-card">
+
+    <span class="posts-tag">COMMUNITY POST</span>
+
+    <h1>Create a Post</h1>
+
+    <p class="form-intro">
+      Share your funniest, most brutal or iconic insult.
+    </p>
+
+    <form method="POST" class="styled-form">
+      {% csrf_token %}
+
+      <div class="form-field">
+        <label for="id_title">Title</label>
+        {{ form.title }}
+      </div>
+
+      <div class="form-field">
+        <label for="id_text">Content</label>
+        {{ form.text }}
+      </div>
+
+      <button type="submit" class="main-btn">
+        Publish Post
+      </button>
+
     </form>
+
+  </div>
+
+</section>
+
 {% endblock %}

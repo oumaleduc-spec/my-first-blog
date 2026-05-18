@@ -7,7 +7,6 @@
     <title>InsultHub</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}?v=2">
 </head>
 
@@ -73,7 +72,7 @@
       <a href="{% url 'languages' %}">Languages</a>
       <a href="{% url 'top' %}">Top Insults</a>
       <a href="#contact">Contact</a>
-      <a href="#imprint">Imprint</a>
+      <a href="{% url 'post_list' %}">Community</a>
     </div>
   </nav>
 </header>

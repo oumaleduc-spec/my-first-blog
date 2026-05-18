@@ -1,21 +1,93 @@
-{% extends 'blog/base.html' %}
+{% extends 'blog/base2.html' %}
+{% load static %}
 
 {% block content %}
-    <article class="post">
-        {% if user.is_authenticated %}
-            <aside class="actions">
-                <a class="btn btn-secondary" href="{% url 'post_edit' pk=post.pk %}">
-                    {% include './icons/pencil-fill.svg' %}
-                </a>
-            </aside>
+
+<section class="post-detail-page">
+
+  <div class="detail-card">
+
+    <span class="posts-tag">COMMUNITY POST</span>
+
+    <h1>{{ post.title }}</h1>
+
+    <p class="detail-text">
+      {{ post.text }}
+    </p>
+
+    <div class="detail-actions">
+
+      <form action="{% url 'like_post' pk=post.pk %}" method="POST">
+        {% csrf_token %}
+
+        {% if liked %}
+          <button type="submit" class="like-btn liked">
+            ❤️ Liked
+          </button>
+        {% else %}
+          <button type="submit" class="like-btn">
+            🤍 Like
+          </button>
         {% endif %}
 
-        {% if post.published_date %}
-            <time class="date">
-                {{ post.published_date }}
-            </time>
-        {% endif %}
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </article>
+      </form>
+
+      <div class="detail-stats">
+
+        <span class="stat-pill">
+          ❤️ {{ post.likes.count }}
+        </span>
+
+        <span class="stat-pill">
+          💬 {{ post.comments.count }}
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="comments-wrapper">
+
+    <h2>Comments</h2>
+
+    {% if user.is_authenticated %}
+
+      <form method="POST" class="styled-form comment-form">
+        {% csrf_token %}
+        {{ comment_form.as_p }}
+
+        <button type="submit" class="main-btn">
+          Post comment
+        </button>
+      </form>
+
+    {% endif %}
+
+    {% for comment in comments %}
+
+      <div class="comment-card">
+
+        <div class="comment-top">
+          <strong>{{ comment.author }}</strong>
+          <span>{{ comment.created_at }}</span>
+        </div>
+
+        <p>{{ comment.text }}</p>
+
+      </div>
+
+    {% empty %}
+
+      <p class="empty-message">
+        No comments yet.
+      </p>
+
+    {% endfor %}
+
+  </div>
+
+</section>
+
 {% endblock %}

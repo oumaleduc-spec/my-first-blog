@@ -52,7 +52,7 @@ def post_detail(request, pk):
     })
 
 
-    @login_required
+@login_required
 def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)

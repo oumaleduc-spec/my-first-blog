@@ -3,6 +3,8 @@ from django.utils import timezone
 from .models import Post, Like
 from .forms import PostForm, CommentForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
 
 
 def home(request):
@@ -99,3 +101,16 @@ def like_post(request, pk):
             like.delete()
 
     return redirect('post_detail', pk=post.pk)
+
+def register(request):
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('post_list')
+    else:
+        form = UserCreationForm()
+
+    return render(request, 'blog/register.html', {'form': form})

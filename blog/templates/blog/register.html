@@ -1,0 +1,27 @@
+{% extends 'blog/base2.html' %}
+
+{% block content %}
+
+<section class="post-form-page">
+  <div class="post-form-card">
+    <span class="posts-tag">JOIN THE COMMUNITY</span>
+
+    <h1>Create account</h1>
+
+    <p class="form-intro">
+      Create an account to like, comment and publish posts.
+    </p>
+
+    <form method="POST" class="styled-form">
+      {% csrf_token %}
+
+      {{ form.as_p }}
+
+      <button type="submit" class="main-btn">
+        Sign up
+      </button>
+    </form>
+  </div>
+</section>
+
+{% endblock %}

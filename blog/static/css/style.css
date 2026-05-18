@@ -1259,13 +1259,20 @@ footer {
   margin-top: 4px;
 }
 
-.nav-user {
-  color: #ffcc00;
-  font-weight: bold;
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links a {
+  margin-left: 0;
 }
 
 .logout-form {
-  margin-left: auto;
+  margin: 0;
+  display: flex;
+  align-items: center;
 }
 
 .nav-login,
@@ -1277,7 +1284,9 @@ footer {
   font-size: 1rem;
   cursor: pointer;
   text-decoration: none;
-  transition: 0.2s ease;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1;
+  padding: 0;
 }
 
 .nav-login:hover,
